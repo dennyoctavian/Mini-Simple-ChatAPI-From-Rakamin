@@ -14,4 +14,8 @@ class ChatRoom extends Model
         'user_one',
         'user_two'
     ];
+
+    public function listChat() {
+        return $this->hasMany(Chat::class);
+    }
 }

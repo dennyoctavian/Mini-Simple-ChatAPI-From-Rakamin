@@ -39,7 +39,7 @@ class UserController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'User created successfully',
-            'user' => $user->get(['name', 'email']),
+            'user' => $user,
             'authorisation' => [
                 'token' => $token,
                 'type' => 'bearer',
