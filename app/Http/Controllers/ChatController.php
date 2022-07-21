@@ -31,7 +31,7 @@ class ChatController extends Controller
             'text' => $request['text']
         ]);
 
-        $listChat = $ChatRoom->listChat->sortByDesc('created_at');
+        $listChat = $ChatRoom->listChat->sortBy('created_at');
 
         return response()->json([
             'status' => 'success',
@@ -49,7 +49,7 @@ class ChatController extends Controller
             'user_id' => $user->id,
             'text' => $request['text']
         ]);
-        $listChat = $chatRoom->listChat->sortByDesc('created_at');
+        $listChat = $chatRoom->listChat->sortBy('created_at');
         return response()->json([
             'status' => 'success',
             'message' => 'Chat Success Send',
@@ -77,7 +77,7 @@ class ChatController extends Controller
                 'message' => 'Chat dengan orang yang dituju tidak ditemukan'
             ]);
         }
-        $listChat = $chatRoomNow->listChat->sortByDesc('created_at');
+        $listChat = $chatRoomNow->listChat->sortBy('created_at');
 
         return response()->json([
             'status' => 'success',
